@@ -3,11 +3,6 @@ Telesign
 
 Telesign is a Rails plugin for interacting with the [Telesign](http://telesign.com) Phone Verification service. 
 
-Prerequisites
--------------
-
-* [Soap4r](http://dev.ctor.org/soap4r)
-
 Download &amp; Initialization
 -----------------------------
 
@@ -46,9 +41,13 @@ Phone Verification requires a random verification code to be read to the callee.
     code = Telesign.verification_code
      
     # Calls the phone number provided and reads the callee the verification code
-    verification = Telesign.verify(phone, code)
+    verification = Telesign.call(phone, code)
 
     reference_id = verification.reference_id
+
+You can also verify using a text message:
+
+    verification = Telesign.sms(phone, code)
 
 After calling the user, you should save the random code and the reference_id for later use. The random code will be used for comparison with the code entered by your user through a form, which will determine whether they are phone verified or not. 
 
@@ -58,12 +57,6 @@ You can also request the status of a specific call, using the previously saved r
     
     status.answered?
     => true
-
-TODO
-----
-
-* Tests
-* Proper documentation
 
 Contributing
 ------------

@@ -2,7 +2,7 @@ module Telesign
   module Status
     class Request < ApiRequest
       
-      api_method :requestSTATUS
+      request_method :requestSTATUS
             
       attr_accessor :reference_id, :verification_code
       

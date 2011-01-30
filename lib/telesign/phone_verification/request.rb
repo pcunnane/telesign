@@ -2,8 +2,6 @@ module Telesign
   module PhoneVerification    
     class Request < ApiRequest
       
-      api_method :requestCALL
-    
       attr_accessor :country_code, :phone_number, :delay_time, :radial_count, 
                     :extension_content, :extension_type, :call_type, :caller_id, :priority,
                     :message, :project, :additional, :verification_code
@@ -21,10 +19,6 @@ module Telesign
       def initialize(phone)
         self.phone_number = phone.number
         self.country_code = phone.country_code
-      end
-      
-      def language=(language)
-        self.message = language
       end
     end
   end

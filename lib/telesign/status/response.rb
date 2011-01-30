@@ -2,6 +2,8 @@ module Telesign
   module Status
     class Response < ApiResponse
 
+      response_method :requestSTATUSResult
+      
       module StatusCode
         ANSWERED             = "100"
         NOT_ANSWERED         = "101"
@@ -21,14 +23,10 @@ module Telesign
       alias_method :reference_id, :referenceID
       alias_method :status_code, :statusCode
       
-      def initialize(response)
-        @response = response.requestSTATUSResult
-        raise_exceptions
-      end
-      
       def answered?
-        status_code == StatusCode::ANSWERED
+        [ StatusCode::ANSWERED, StatusCode::SMS_DELIVERED ].include?(status_code)
       end
+      alias_method :delivered?, :answered?
       
       def verification_code_valid?
         @response.verificationCodeValid == "0"

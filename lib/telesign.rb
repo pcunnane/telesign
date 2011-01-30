@@ -5,12 +5,19 @@ module Telesign
     yield(request) if block_given?
     PhoneID::Response.new(request.call)
   end
-
-  def self.verify(phone, verification_code)
-    request = PhoneVerification::Request.new(phone)
+  
+  def self.call(phone, verification_code)
+    request = Call::Request.new(phone)
     request.verification_code = verification_code
     yield(request) if block_given?
-    PhoneVerification::Response.new(request.call)
+    Call::Response.new(request.call)
+  end
+  
+  def self.sms(phone, verification_code)
+    request = SMS::Request.new(phone)
+    request.verification_code = verification_code
+    yield(request) if block_given?
+    SMS::Response.new(request.call)
   end
   
   def self.status(reference_id, verification_code = nil)
@@ -27,7 +34,6 @@ module Telesign
   end
 end
 
-gem 'soap4r'
 require 'telesign/phone'
 require 'telesign/lib/country'
 require 'telesign/lib/exceptions'

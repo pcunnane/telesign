@@ -2,7 +2,7 @@ module Telesign
   module PhoneID
     class Request < ApiRequest
   
-      api_method :requestPhoneID
+      request_method :requestPhoneID
             
       attr_accessor :phone_number, :country_code
       

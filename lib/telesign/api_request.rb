@@ -6,13 +6,13 @@ module Telesign
     alias_method :customerID, :customer_id
     alias_method :authenticationID, :authentication_id
     
-    def self.api_method(method = nil)
-      @api_method ||= method
-      @api_method
+    def self.request_method(method = nil)
+      @request_method ||= method
+      @request_method
     end
     
     def call
-      driver.send(self.class.api_method, self)
+      driver.send(self.class.request_method, self)
     end
 
     def driver

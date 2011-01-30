@@ -3,6 +3,8 @@ module Telesign
   module PhoneID
     class Response < ApiResponse
       
+      response_method :requestPhoneIDResult
+      
       def_delegators :@response, :city, :county, :zip, :state, :country, :countryName, :timeZone, :latitude, :longitude, 
                      :aPIError, :cleansedCode, :maxNumLength, :referenceID, :timeZoneUTCMin, :timeZoneUTCMax, 
                      :primaryMetroCode, :originalPhoneNumber, :cleansedPhoneNumber
@@ -21,10 +23,8 @@ module Telesign
 
       attr_reader :phone_type
     
-      def initialize(response)
-        @response = response.requestPhoneIDResult
+      def after_initialize
         @phone_type = Telesign::PhoneType.type_for_code(@response.typeofPhone)
-        raise_exceptions
       end
     end
   end
