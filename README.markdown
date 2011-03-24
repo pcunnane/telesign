@@ -3,12 +3,13 @@ Telesign
 
 Telesign is a Rails plugin for interacting with the [Telesign](http://telesign.com) Phone Verification service. 
 
-Download &amp; Initialization
+Installation with Bundler!
 -----------------------------
 
-Using [Git](http://git-scm.com) clone the project:
+Add the following do your bundler file:
 
-      $ git clone http://github.com/pcunnane/telesign.git
+      gem "soap4r", :git => "git://github.com/fabiokung/soap4r.git"
+	  gem "telesign", :git => "git://github.com/mattvv/telesign.git"
 
 And then somewhere in a Rails initializer:
 

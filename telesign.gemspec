@@ -1,6 +1,7 @@
 Gem::Specification.new do |s|
   s.name = %q{telesign}
   s.version = "0.0.1"
+  s.summary = "A Telesign Library"
   s.has_rdoc = false
   s.required_ruby_version = ">= 1.9.2"
   s.platform = "ruby"
@@ -12,4 +13,6 @@ Gem::Specification.new do |s|
   ]  
   s.files = Dir['lib/**/*.rb']
   s.autorequire = 'telesign'
+  
+  s.add_dependency("soap4r")
 end
