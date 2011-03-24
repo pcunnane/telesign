@@ -30,7 +30,7 @@ class TelesignAPISoap < ::SOAP::RPC::Driver
         :response_style => :document, :response_use => :literal,
         :faults => {} }
     ],
-    [ "https://www.telesign.com/api/œΩRequestSTATUS",
+    [ "https://www.telesign.com/api/RequestSTATUS",
       "requestSTATUS",
       [ ["in", "parameters", ["::SOAP::SOAPElement", "https://www.telesign.com/api/", "RequestSTATUS"]],
         ["out", "parameters", ["::SOAP::SOAPElement", "https://www.telesign.com/api/", "RequestSTATUSResponse"]] ],
