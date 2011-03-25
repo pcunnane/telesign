@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   ]  
   s.files = [
     "MIT-LICENSE",
-    "lib/telesign/telesign.rb",
+    "lib/telesign.rb",
     "lib/telesign/api/default.rb",
     "lib/telesign/api/defaultDriver.rb",
     "lib/telesign/api/defaultMappingRegistry.rb",
