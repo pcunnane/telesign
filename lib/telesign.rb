@@ -34,6 +34,8 @@ module Telesign
   end
 end
 
+require 'forwardable'
+
 require 'telesign/phone'
 require 'telesign/lib/country'
 require 'telesign/lib/exceptions'
