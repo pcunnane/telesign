@@ -1,3 +1,5 @@
+NO LONGER MAINTAINED, USE THIS GEM: https://rubygems.org/gems/telesign/versions/0.0.2
+
 Telesign
 ========
 
